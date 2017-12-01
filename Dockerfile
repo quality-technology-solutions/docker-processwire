@@ -6,6 +6,7 @@ RUN apt-get update && \
     apt-get dist-upgrade -y && \
     apt-get install -y \
     git \
+    curl \
     apache2 \
     libapache2-mod-php7.0 \
     php7.0 \
@@ -18,7 +19,7 @@ RUN apt-get update && \
     php7.0-xml \
     php7.0-xsl \
     php7.0-zip \
-    php7.0-soap
+    php7.0-soap 
 
 # Update the default apache site with the config we created.
 COPY config/apache/default.conf /etc/apache2/sites-available/000-default.conf
